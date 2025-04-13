@@ -1,21 +1,36 @@
 {
-    "manifest_version": 2,
-    "name": "LinkedIn AdBlocker",
-    "version": "1.0",
-    "description": "Hides ads on LinkedIn.",
-    "permissions": [
-      "tabs",
-      "webNavigation",
-      "activeTab",
-      "https://www.linkedin.com/*"
-    ],
-    "background": {
-      "scripts": ["extension.js"],
-      "persistent": false
-    },
-    "icons": {
-      "48": "image.png"
-    },
-    "web_accessible_resources": ["linkedin.js"]
-  }
-  
+  "manifest_version": 3,
+  "name": "LinkedIn AdBlocker",
+  "version": "1.0",
+  "description": "Hides ads on LinkedIn.",
+  "author": "<YOUR_NAME>",
+
+  "permissions": [
+    "scripting",
+    "tabs",
+    "webNavigation"
+  ],
+
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+
+  "background": {
+    "service_worker": "extension.js"
+  },
+
+  "action": {
+    "default_title": "LinkedIn AdBlocker"
+  },
+
+  "icons": {
+    "48": "image.png"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["linkedin.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
