@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "LinkedIn AdBlocker",
+    "version": "1.0",
+    "description": "Hides ads on LinkedIn.",
+    "permissions": [
+      "tabs",
+      "webNavigation",
+      "activeTab",
+      "https://www.linkedin.com/*"
+    ],
+    "background": {
+      "scripts": ["extension.js"],
+      "persistent": false
+    },
+    "icons": {
+      "48": "image.png"
+    },
+    "web_accessible_resources": ["linkedin.js"]
+  }
+  
